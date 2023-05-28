@@ -1,0 +1,40 @@
+<app-nav-bar2 [headlineName]="headline2" [icons]="icon1"></app-nav-bar2>
+
+<button routerLink="/customers" class="btn_1 btn btn_2 btn-success">Back</button>
+
+
+<app-add-employee (buttonClicked)="allEmployees()"></app-add-employee>
+
+
+<!-- search menu -->
+<div class="container text-center">
+    <h1>{{title}}</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="search-employee">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                placeholder="  Start searching for a employee...">
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees | filter:searchText  index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.birthday}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

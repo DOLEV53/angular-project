@@ -1,0 +1,43 @@
+
+<app-nav-bar2 [headlineName]="headline" [icons]="icon1"></app-nav-bar2>
+
+<!-- Update customer -->
+<form [formGroup]="editCustomerForm" class="mt-5" (ngSubmit)="onSubmit() ">
+
+    <div class="d-flex flex-row">
+    <div class=" mb-2 form-group div-editCustomer p-2">
+        <label for="lastName">* First Name</label>
+        <input formControlName="firstName" type="text" class="form-control" id="name" placeholder="First Name">
+    </div>
+    <div class=" mb-2 form-group  div-editCustomer p-2">
+        <label for="lastName">* Last Name</label>
+        <input formControlName="lastName" type="text" class="form-control" id="name" placeholder="Last Name">
+    </div>
+    </div>
+    
+    <div class="d-flex flex-row">
+    <div class="mb-2 form-group div-editCustomer p-2">
+        <label for="phone">* Phone</label>
+        <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="Phone">
+    </div>
+    <div class="mb-2 form-group  div-editCustomer p-2">
+        <label for="email">* Email</label>
+        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email">
+    </div>
+    </div>
+
+    <div class="mb-2 form-group div_address">
+        <label for="lastName">* Address</label>
+        <input formControlName="address" type="text" class="form-control" id="address" placeholder="Address">
+    </div>
+    
+    <div class="d-flex flex-row">
+    <button routerLink="/customers" type="submit" class="btn btn_1 btn-success ">
+        Cancel
+    </button>
+    <button [disabled]="editCustomerForm.invalid" type="submit" class="btn btn_2 btn-success  ">
+        Update Customer
+    </button>
+    </div>
+
+</form><br>

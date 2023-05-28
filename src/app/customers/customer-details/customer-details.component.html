@@ -1,0 +1,41 @@
+
+<app-nav-bar2 [headlineName]="headline" [icons]="icon"></app-nav-bar2>
+
+<!-- Customer Details -->
+<form [formGroup]="customerDetailsForm" class="mt-5"  >
+
+    <div class="d-flex flex-row">
+        <div class=" mb-2 form-group div-CustomerDetails p-2">
+            <label for="lastName">* First Name</label>
+            <input formControlName="firstName" type="text" class="form-control bg-light" id="name" placeholder="First Name"  readonly>
+        </div>
+        <div class=" mb-2 form-group div-CustomerDetails  p-2">
+            <label for="lastName">* Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control bg-light" id="name" placeholder="Last Name" readonly>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row">
+        <div class="mb-2 form-group div-CustomerDetails p-2">
+            <label for="phone">* Phone</label>
+            <input formControlName="phone" type="text" class="form-control bg-light" id="phone" placeholder="Phone" readonly>
+        </div>
+        <div class="mb-2 form-group div-CustomerDetails p-2">
+            <label for="email">* Email</label>
+            <input formControlName="email" type="email" class="form-control bg-light" id="email" placeholder="Email" readonly>
+        </div>
+    </div>
+
+    <div class="mb-2 form-group div_address">
+        <label for="lastName">* Address</label>
+        <input formControlName="address" type="text" class="form-control bg-light" id="address" placeholder="Address" readonly>
+    </div>
+
+    <div class="d-flex flex-row">
+        <button routerLink="/customers" type="submit" class="btn btn_1 btn-success ">
+           Back
+        </button>
+    </div>
+
+</form><br>
+

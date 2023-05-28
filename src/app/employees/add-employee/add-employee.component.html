@@ -1,0 +1,49 @@
+
+
+<!-- add employees -->
+<div class="section-bg p-3">
+    <div class="toggle">
+        <div>
+            <button (click)="onButtonClick()"  (click)="toggleForm()" class="btn btn-success">
+             Add Employee
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="showForm">
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3 div_employee">
+                <label for="name" class="form-label">* Name</label>
+                <input formControlName="name" type="text" class="form-control" id="name">
+            </div>
+            <app-field-error [formField]="getFieldControl('name')"></app-field-error>
+
+
+            <div class="mb-3 div_employee">
+                <label for="email" class="form-label">* Email</label>
+                <input formControlName="email" type="email" class="form-control" id="email">
+            </div>
+            <app-field-error [formField]="getFieldControl('email')"></app-field-error>
+
+
+            <div class="mb-3 div_employee">
+                <label for="phone" class="form-label">* Phone</label>
+                <input formControlName="phone" type="text" class="form-control" id="phone">
+            </div>
+            <app-field-error [formField]="getFieldControl('phone')"></app-field-error>
+
+
+            <div class="mb-3 div_employee">
+                <label for="birthday" class="form-label">* Birthday</label>
+                <input formControlName="birthday" type="text" class="form-control" id="birthday">
+            </div>
+            <app-field-error [formField]="getFieldControl('birthday')"></app-field-error>
+
+
+            <button [disabled]="employeeForm.invalid" type="submit" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i>
+                Add
+            </button>
+        </form>
+    </div>
+

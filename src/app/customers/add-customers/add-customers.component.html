@@ -1,0 +1,46 @@
+
+<!-- add customer -->
+<div class="container">
+<form [formGroup]="customerForm" class="mt-5" (ngSubmit)="onSubmit() ">
+    
+
+    <div class=" mb-2 form-group div-customer ">
+        <label for="lastName">* First Name</label>
+        <input formControlName="firstName" type="text" class="form-control" id="name" >
+    </div>
+    <app-field-error [formField]="getFieldControl('firstName')"></app-field-error>
+
+    <div class=" mb-2 form-group  div-customer ">
+        <label for="lastName">* Last Name</label>
+        <input formControlName="lastName" type="text" class="form-control" id="name" >
+    </div>
+    <app-field-error [formField]="getFieldControl('lastName')"></app-field-error>
+  
+
+    <div class="mb-2 form-group div-customer ">
+        <label for="phone">* Phone</label>
+        <input formControlName="phone" type="text" class="form-control" id="phone">
+    </div>
+    <app-field-error [formField]="getFieldControl('phone')"></app-field-error>
+
+    <div class="mb-2 form-group  div-customer">
+        <label for="email">* Email</label>
+        <input formControlName="email" type="email" class="form-control" id="email">
+    </div>
+    <app-field-error [formField]="getFieldControl('email')"></app-field-error>
+    
+
+
+    <div class="mb-2 form-group div_address">
+        <label for="address">* Address</label>
+        <input formControlName="address" type="text" class="form-control" id="address" >
+    </div>
+    <app-field-error [formField]="getFieldControl('address')"></app-field-error>
+
+    <button (click)="onButtonClick()" [disabled]="customerForm.invalid" type="submit" class="btn btn-success col-2 ">
+        <i class="bi bi-plus-circle"></i>
+        Add Customer
+    </button>
+  
+</form><br><br>
+</div>
